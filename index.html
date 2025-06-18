@@ -153,6 +153,25 @@
   </footer>
 </body>
 </html>
+<form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="cv-submission" />
+  <!-- All your fields here -->
+</form>
+
+<div id="thank-you" style="display:none;">
+  <h3>Thanks for submitting!</h3>
+  <p>If you haven’t paid yet, please select your package below:</p>
+  <a class="btn" href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02">Essential CV – £35</a>
+  <a class="btn" href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01">Career Builder – £65</a>
+  <a class="btn" href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00">Complete Profile – £110</a>
+</div>
+
+<script>
+  if (window.location.search.includes('success')) {
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('thank-you').style.display = 'block';
+  }
+</script>
 
   
 
