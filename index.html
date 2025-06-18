@@ -3,31 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PrimeDraft – Professional CV & Career Documents</title>
+  <title>PrimeDraft – Professional CV Writing</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0; padding:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      background:#fff;
-      color:#112;
-      text-align:center;
-      padding:20px;
-    }
-    h1 { font-size:2rem; margin-bottom:0.5rem; color:#0a1e3f; }
-    p { font-size:1rem; margin-bottom:1rem; }
-    a { color:#0a1e3f; text-decoration:none; font-weight:bold; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #ffffff; color: #111; line-height: 1.6; }
+    header { background: #0a1e3f; color: #fff; padding: 1.5rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+    .hero { text-align: center; padding: 4rem 2rem; background: #f8f8f8; }
+    .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; color: #0a1e3f; }
+    .hero p { font-size: 1.1rem; }
+    .hero .btns { margin-top: 2rem; }
+    .btn { padding: 0.75rem 1.5rem; border: none; background: #0a1e3f; color: white; cursor: pointer; font-weight: bold; text-decoration: none; margin: 0 1rem; border-radius: 5px; }
+    .section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
+    .section h3 { color: #0a1e3f; margin-bottom: 1rem; }
+    .packages, .testimonials { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .package, .testimonial { padding: 1.5rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
+    .testimonial { font-style: italic; }
+    form input, form textarea, form select { display: block; width: 100%; margin-bottom: 1rem; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
+    form label { margin-bottom: 0.5rem; display: block; font-weight: bold; }
+    footer { background: #0a1e3f; color: white; padding: 2rem; text-align: center; }
+    .form-section { background: #eef2f8; padding: 2rem; border-radius: 8px; }
   </style>
 </head>
 <body>
-  <div>
+  <header>
     <h1>PrimeDraft</h1>
-    <p>Professional CV, Cover Letter & LinkedIn profile writing services tailored for job seekers in the UK.</p>
-    <p>Email: <a href="mailto:primedraft.contact@gmail.com">primedraft.contact@gmail.com</a></p>
-    <p>Launching soon — full website coming live in the next few days.</p>
-  </div>
+    <nav>
+      <a href="#packages">Packages</a>
+      <a href="#form">Start Your CV Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Crafted to Impress. Designed to Get Interviews.</h2>
+    <p>We highlight your strengths and land your future.</p>
+    <div class="btns">
+      <a href="#form" class="btn">Get Started</a>
+      <a href="#packages" class="btn">See Packages</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>About PrimeDraft</h3>
+    <p>At PrimeDraft, we connect you with skilled freelance CV writers who know how to craft documents that get noticed. Our service is designed to make the CV writing process simple and effective, helping you present your experience clearly and professionally.</p>
+    <p><strong>Why choose us?</strong></p>
+    <ul>
+      <li>Vetted freelancers experienced in writing CVs tailored for the UK job market.</li>
+      <li>Focused on quality, clarity, and ATS optimization.</li>
+      <li>Simple and convenient: choose your package, pay, and get your tailored CV delivered in 2–3 days.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="packages">
+    <h3>Our Packages</h3>
+    <div class="packages">
+      <div class="package">
+        <h4>Essential CV – £35</h4>
+        <p>Professionally written CV only.</p>
+        <a href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02" class="btn">Order Now</a>
+      </div>
+      <div class="package">
+        <h4>Career Builder – £65</h4>
+        <p>CV + tailored Cover Letter.</p>
+        <a href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01" class="btn">Order Now</a>
+      </div>
+      <div class="package">
+        <h4>Complete Profile – £110</h4>
+        <p>CV + Cover Letter + LinkedIn Makeover.</p>
+        <a href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00" class="btn">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Refund Policy</h3>
+    <p>At PrimeDraft, your satisfaction is important to us. If your order is not delivered within the agreed timeframe or the final documents significantly differ from the agreed scope, you may request a refund. We provide up to two complimentary revisions to ensure your documents meet your expectations. Refund requests must be made within 7 days of delivery. Refunds are not available for changes requested after final approval or due to personal style preferences.</p>
+  </section>
+
+  <section class="section">
+    <h3>What Our Clients Say</h3>
+    <div class="testimonials">
+      <div class="testimonial">“PrimeDraft’s CV service made applying for jobs so much easier. I started getting interview calls within a week.” – Alex, Marketing Assistant</div>
+      <div class="testimonial">“Quick turnaround and professional writing. My CV now stands out and gets noticed by recruiters.” – Sarah, Graduate</div>
+      <div class="testimonial">“Excellent service with clear communication. The cover letter really helped me land my first job.” – James, Junior Analyst</div>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <h3>Start Your CV Process</h3>
+    <div class="form-section">
+      <form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data">
+        <label for="name">Full Name*</label>
+        <input type="text" name="name" required>
+
+        <label for="email">Email*</label>
+        <input type="email" name="email" required>
+
+        <label for="phone">Phone Number (optional)</label>
+        <input type="text" name="phone">
+
+        <label for="service">What service do you need?*</label>
+        <select name="service" required>
+          <option value="">Select</option>
+          <option value="New CV from scratch">New CV from scratch</option>
+          <option value="Improve existing CV">Improve existing CV</option>
+          <option value="Cover Letter">Cover Letter</option>
+          <option value="LinkedIn Profile">LinkedIn Profile</option>
+        </select>
+
+        <label for="industry">What jobs or industries are you applying for?</label>
+        <input type="text" name="industry">
+
+        <label for="cv">Upload current CV (if you have one)</label>
+        <input type="file" name="cv">
+
+        <label for="roles">Any job roles you're targeting?</label>
+        <textarea name="roles"></textarea>
+
+        <label for="info">Any specific goals or achievements you'd like included?</label>
+        <textarea name="info"></textarea>
+
+        <label for="contact_method">Preferred method of contact</label>
+        <select name="contact_method">
+          <option value="Email">Email</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Not at all">Not at all</option>
+        </select>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Got a question? Reach us at <a href="mailto:primedraft.contact@gmail.com" style="color:white; text-decoration:underline;">primedraft.contact@gmail.com</a></p>
+    <p>Business Hours: Mon–Sat, 9am–6pm (UK Time) | Response time: Within 24 hours</p>
+    <p style="margin-top: 2rem; font-size: 0.85rem;">© 2025 PrimeDraft. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
