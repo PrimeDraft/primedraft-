@@ -13,10 +13,10 @@
     .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; color: #0a1e3f; }
     .hero p { font-size: 1.1rem; }
     .hero .btns { margin-top: 2rem; }
-    .btn { padding: 0.75rem 1.5rem; border: none; background: #0a1e3f; color: white; cursor: pointer; font-weight: bold; text-decoration: none; margin: 0 1rem; border-radius: 5px; }
+    .btn { padding: 0.75rem 1.5rem; border: none; background: #0a1e3f; color: white; cursor: pointer; font-weight: bold; text-decoration: none; margin: 0 1rem; border-radius: 5px; display: inline-block; }
     .section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
     .section h3 { color: #0a1e3f; margin-bottom: 1rem; }
-    .packages, .testimonials { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .packages, .testimonials, .post-form-links { display: grid; grid-template-columns: 1fr; gap: 2rem; }
     .package, .testimonial { padding: 1.5rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
     .testimonial { font-style: italic; }
     form input, form textarea, form select { display: block; width: 100%; margin-bottom: 1rem; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
@@ -92,6 +92,8 @@
 
   <section class="section" id="form">
     <h3>Start Your CV Process</h3>
+    <p>If you've already paid, please fill out the form below so we can begin working on your documents.</p>
+    <p>If you haven't paid yet, you can do so after submitting this form using the payment buttons provided.</p>
     <div class="form-section">
       <form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data">
         <label for="name">Full Name*</label>
@@ -133,6 +135,14 @@
 
         <button type="submit" class="btn">Submit</button>
       </form>
+      <div style="margin-top: 2rem;">
+        <p><strong>If you haven’t paid yet, please choose your package:</strong></p>
+        <div class="post-form-links">
+          <a href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02" class="btn">Essential CV – Pay £35</a>
+          <a href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01" class="btn">Career Builder – Pay £65</a>
+          <a href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00" class="btn">Complete Profile – Pay £110</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -144,3 +154,6 @@
 </body>
 </html>
 
+  
+
+ 
