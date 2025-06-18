@@ -151,16 +151,9 @@
     <p>Business Hours: Mon–Sat, 9am–6pm (UK Time) | Response time: Within 24 hours</p>
     <p style="margin-top: 2rem; font-size: 0.85rem;">© 2025 PrimeDraft. All rights reserved.</p>
   </footer>
-</body>
-</html>
-<form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="cv-submission" />
-  <!-- All your fields here -->
-</form>
-
-<div id="thank-you" style="display:none;">
+  <div id="thank-you" style="display:none; padding: 2rem; background: #e6f7ff; border-radius: 8px;">
   <h3>Thanks for submitting!</h3>
-  <p>If you haven’t paid yet, please select your package below:</p>
+  <p>Your details have been received. If you haven’t paid yet, please select your package below:</p>
   <a class="btn" href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02">Essential CV – £35</a>
   <a class="btn" href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01">Career Builder – £65</a>
   <a class="btn" href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00">Complete Profile – £110</a>
@@ -172,6 +165,16 @@
     document.getElementById('thank-you').style.display = 'block';
   }
 </script>
+
+</body>
+</html>
+<form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="cv-submission" />
+ netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="cv-submission" />
+  <!-- All your fields here -->
+</form>
+
 
   
 
