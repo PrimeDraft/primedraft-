@@ -5,24 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrimeDraft – Professional CV Writing</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #ffffff; color: #111; line-height: 1.6; }
-    header { background: #0a1e3f; color: #fff; padding: 1.5rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { margin: 0; font-size: 1.5rem; }
-    nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
-    .hero { text-align: center; padding: 4rem 2rem; background: #f8f8f8; }
-    .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; color: #0a1e3f; }
-    .hero p { font-size: 1.1rem; }
-    .btn { padding: 0.75rem 1.5rem; border: none; background: #0a1e3f; color: white; cursor: pointer; font-weight: bold; text-decoration: none; margin: 0 1rem; border-radius: 5px; display: inline-block; }
-    .section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
-    .section h3 { color: #0a1e3f; margin-bottom: 1rem; }
-    .packages, .testimonials { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .package, .testimonial { padding: 1.5rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
-    .testimonial { font-style: italic; }
-    footer { background: #0a1e3f; color: white; padding: 2rem; text-align: center; }
-    #form-section { display: none; background: #eef2f8; padding: 2rem; border-radius: 8px; max-width: 700px; margin: 2rem auto; }
-    label { font-weight: bold; display: block; margin-top: 1rem; }
-    input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
-    button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #0a1e3f; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      background: #0a1e3f;
+      color: #fff;
+      padding: 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f8f8f8;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0a1e3f;
+    }
+    .hero p {
+      font-size: 1.1rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background: #0a1e3f;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 1rem;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h3 {
+      color: #0a1e3f;
+      margin-bottom: 1rem;
+    }
+    .packages, .testimonials {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .package, .testimonial {
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    .testimonial {
+      font-style: italic;
+    }
+    footer {
+      background: #0a1e3f;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    #form-section {
+      display: none;
+      background: #eef2f8;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 2rem auto;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0a1e3f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -91,7 +185,7 @@
     <p>At PrimeDraft, your satisfaction is important to us. If your order is not delivered within the agreed timeframe or the final documents significantly differ from the agreed scope, you may request a refund. We provide up to two complimentary revisions to ensure your documents meet your expectations. Refund requests must be made within 7 days of delivery. Refunds are not available for changes requested after final approval or due to personal style preferences.</p>
   </section>
 
-  <div id="form-section">
+  <div id="form-section" style="display:none;">
     <h3>Submit Your CV Information</h3>
     <form name="cv-details" method="POST" data-netlify="true" enctype="multipart/form-data">
       <input type="hidden" name="form-name" value="cv-details">
@@ -139,4 +233,3 @@
   </script>
 </body>
 </html>
-
