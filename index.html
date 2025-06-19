@@ -15,13 +15,14 @@
     .btn { padding: 0.75rem 1.5rem; border: none; background: #0a1e3f; color: white; cursor: pointer; font-weight: bold; text-decoration: none; margin: 0 1rem; border-radius: 5px; display: inline-block; }
     .section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
     .section h3 { color: #0a1e3f; margin-bottom: 1rem; }
-    .packages, .testimonials, .post-form-links { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .packages, .testimonials { display: grid; grid-template-columns: 1fr; gap: 2rem; }
     .package, .testimonial { padding: 1.5rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
     .testimonial { font-style: italic; }
-    form input, form textarea, form select { display: block; width: 100%; margin-bottom: 1rem; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
-    form label { margin-bottom: 0.5rem; display: block; font-weight: bold; }
     footer { background: #0a1e3f; color: white; padding: 2rem; text-align: center; }
-    .form-section { background: #eef2f8; padding: 2rem; border-radius: 8px; }
+    #form-section { display: none; background: #eef2f8; padding: 2rem; border-radius: 8px; max-width: 700px; margin: 2rem auto; }
+    label { font-weight: bold; display: block; margin-top: 1rem; }
+    input, textarea, select { width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 1.5rem; padding: 0.75rem 1.5rem; background-color: #0a1e3f; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -29,7 +30,6 @@
     <h1>PrimeDraft</h1>
     <nav>
       <a href="#packages">Packages</a>
-      <a href="#form">Start Your CV Process</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -38,7 +38,6 @@
     <h2>Crafted to Impress. Designed to Get Interviews.</h2>
     <p>We highlight your strengths and land your future.</p>
     <div class="btns">
-      <a href="#form" class="btn">Get Started</a>
       <a href="#packages" class="btn">See Packages</a>
     </div>
   </section>
@@ -72,6 +71,10 @@
         <a href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00" class="btn">Order Now</a>
       </div>
     </div>
+    <p style="margin-top: 2rem;">
+      After completing your payment, you’ll be automatically redirected to a short form. Please complete it to help us begin processing your order.<br><br>
+      <strong>Important:</strong> Please use the same email address for both your payment and this form to ensure we can match your order quickly and accurately.
+    </p>
   </section>
 
   <section class="section">
@@ -83,68 +86,45 @@
     </div>
   </section>
 
-  <section class="section" id="form">
-    <h3>Start Your CV Process</h3>
-    <p>If you've already paid, please fill out the form below so we can begin working on your documents.</p>
-    <p>If you haven't paid yet, you can do so after submitting this form using the payment buttons provided.</p>
-    <div class="form-section">
-      <form name="cv-submission" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="cv-submission" />
-
-        <label>Full Name*</label>
-        <input type="text" name="name" required>
-
-        <label>Email*</label>
-        <input type="email" name="email" required>
-
-        <label>Phone Number (optional)</label>
-        <input type="text" name="phone">
-
-        <label>What service do you need?*</label>
-        <select name="service" required>
-          <option value="">Select</option>
-          <option value="New CV from scratch">New CV from scratch</option>
-          <option value="Improve existing CV">Improve existing CV</option>
-          <option value="Cover Letter">Cover Letter</option>
-          <option value="LinkedIn Profile">LinkedIn Profile</option>
-        </select>
-
-        <label>What jobs or industries are you applying for?</label>
-        <input type="text" name="industry">
-
-        <label>Upload current CV (if you have one)</label>
-        <input type="file" name="cv">
-
-        <label>Any job roles you're targeting?</label>
-        <textarea name="roles"></textarea>
-
-        <label>Any specific goals or achievements you'd like included?</label>
-        <textarea name="info"></textarea>
-
-        <label>Preferred method of contact</label>
-        <select name="contact_method">
-          <option value="Email">Email</option>
-          <option value="WhatsApp">WhatsApp</option>
-          <option value="Not at all">Not at all</option>
-        </select>
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
-
-      <div id="thank-you" style="display:none; padding: 2rem; background: #e6f7ff; border-radius: 8px;">
-        <h3>Thanks for submitting!</h3>
-        <p>Your details have been received. If you haven’t paid yet, please choose your package below:</p>
-        <a class="btn" href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02">Essential CV – £35</a>
-        <a class="btn" href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01">Career Builder – £65</a>
-        <a class="btn" href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00">Complete Profile – £110</a>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <h3>Refund Policy</h3>
     <p>At PrimeDraft, your satisfaction is important to us. If your order is not delivered within the agreed timeframe or the final documents significantly differ from the agreed scope, you may request a refund. We provide up to two complimentary revisions to ensure your documents meet your expectations. Refund requests must be made within 7 days of delivery. Refunds are not available for changes requested after final approval or due to personal style preferences.</p>
   </section>
+
+  <div id="form-section">
+    <h3>Submit Your CV Information</h3>
+    <form name="cv-details" method="POST" data-netlify="true" enctype="multipart/form-data">
+      <input type="hidden" name="form-name" value="cv-details">
+      <label for="name">Full Name*</label>
+      <input type="text" name="name" required>
+      <label for="email">Email Address (must match payment)*</label>
+      <input type="email" name="email" required>
+      <label for="phone">Phone Number (optional)</label>
+      <input type="text" name="phone">
+      <label for="service">What service did you purchase?*</label>
+      <select name="service" required>
+        <option value="">Select</option>
+        <option value="Essential CV">Essential CV</option>
+        <option value="Career Builder">Career Builder</option>
+        <option value="Complete Profile">Complete Profile</option>
+      </select>
+      <label for="industry">What jobs or industries are you applying for?</label>
+      <input type="text" name="industry">
+      <label for="cv">Upload current CV (if you have one)</label>
+      <input type="file" name="cv">
+      <label for="roles">Any job roles you're targeting?</label>
+      <textarea name="roles"></textarea>
+      <label for="info">Any specific goals or achievements you'd like included?</label>
+      <textarea name="info"></textarea>
+      <label for="contact_method">Preferred method of contact</label>
+      <select name="contact_method">
+        <option value="Email">Email</option>
+        <option value="WhatsApp">WhatsApp</option>
+        <option value="Not at all">Not at all</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
   <footer id="contact">
     <p>Got a question? Reach us at <a href="mailto:primedraft.contact@gmail.com" style="color:white; text-decoration:underline;">primedraft.contact@gmail.com</a></p>
@@ -154,9 +134,9 @@
 
   <script>
     if (window.location.search.includes('success')) {
-      document.querySelector('form').style.display = 'none';
-      document.getElementById('thank-you').style.display = 'block';
+      document.getElementById('form-section').style.display = 'block';
     }
   </script>
 </body>
 </html>
+
