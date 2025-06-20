@@ -78,25 +78,23 @@
       font-style: italic;
     }
     .templates-section {
-      padding: 1rem 2rem 3rem 2rem;
+      padding: 2rem 2rem 4rem 2rem;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4rem;
       flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
     }
     .template-block {
-      flex: 1 1 45%;
-      max-width: 400px;
-      text-align: center;
+      flex: 1;
+      min-width: 280px;
     }
     .template-block h4 {
       color: #0a1e3f;
-      margin-top: 0;
       margin-bottom: 0.5rem;
+      margin-top: 0;
       font-size: 1.2rem;
+      text-align: center;
     }
     .template-block img {
       width: 100%;
@@ -108,7 +106,7 @@
     @media (max-width: 768px) {
       .templates-section {
         flex-direction: column;
-        gap: 2rem;
+        align-items: center;
       }
       .template-block {
         width: 90%;
@@ -125,7 +123,7 @@
 <body>
   <header>
     <div style="display: flex; align-items: center;">
-      <img src="logo.jpg" alt="PrimeDraft Logo" style="height: 40px; margin-right: 0.75rem;">
+      <img src="logo.PNG" alt="PrimeDraft Logo" style="height: 40px; margin-right: 0.75rem;">
       <h1 style="margin: 0; font-size: 1.5rem;">PrimeDraft</h1>
     </div>
     <nav>
@@ -188,11 +186,11 @@
 
   <div class="templates-section">
     <div class="template-block">
-      <h4>CV Template</h4>
+      <h4 style="margin-top: 0; margin-bottom: 0.5rem;">CV Template</h4>
       <img src="cv-template.jpg" alt="CV Template">
     </div>
     <div class="template-block">
-      <h4>Cover Letter Template</h4>
+      <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Cover Letter Template</h4>
       <img src="cover-letter-template.jpg" alt="Cover Letter Template">
     </div>
   </div>
