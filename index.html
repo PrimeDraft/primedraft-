@@ -23,10 +23,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
     nav a {
       color: #fff;
       text-decoration: none;
@@ -81,6 +77,43 @@
     .testimonial {
       font-style: italic;
     }
+    .templates-section {
+      padding: 1rem 2rem 3rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4rem;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .template-block {
+      flex: 1 1 45%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .template-block h4 {
+      color: #0a1e3f;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .template-block img {
+      width: 100%;
+      aspect-ratio: 5 / 7;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .templates-section {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .template-block {
+        width: 90%;
+      }
+    }
     footer {
       background: #0a1e3f;
       color: white;
@@ -91,7 +124,10 @@
 </head>
 <body>
   <header>
-    <h1>PrimeDraft</h1>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.jpg" alt="PrimeDraft Logo" style="height: 40px; margin-right: 0.75rem;">
+      <h1 style="margin: 0; font-size: 1.5rem;">PrimeDraft</h1>
+    </div>
     <nav>
       <a href="#packages">Packages</a>
       <a href="#contact">Contact</a>
@@ -149,6 +185,17 @@
       <div class="testimonial">“Excellent service with clear communication. The cover letter really helped me land my first job.” – James, Junior Analyst</div>
     </div>
   </section>
+
+  <div class="templates-section">
+    <div class="template-block">
+      <h4>CV Template</h4>
+      <img src="cv-template.jpg" alt="CV Template">
+    </div>
+    <div class="template-block">
+      <h4>Cover Letter Template</h4>
+      <img src="cover-letter-template.jpg" alt="Cover Letter Template">
+    </div>
+  </div>
 
   <section class="section">
     <h3>Refund Policy</h3>
