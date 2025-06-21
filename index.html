@@ -78,23 +78,23 @@
       font-style: italic;
     }
     .templates-section {
-      padding: 2rem 2rem 4rem 2rem;
+      padding: 1.5rem 2rem 4rem 2rem;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: flex-start;
       gap: 2rem;
     }
     .template-block {
       flex: 1;
       min-width: 280px;
+      max-width: 45%;
+      text-align: center;
     }
     .template-block h4 {
       color: #0a1e3f;
       margin-bottom: 0.5rem;
-      margin-top: 0;
       font-size: 1.2rem;
-      text-align: center;
     }
     .template-block img {
       width: 100%;
@@ -111,6 +111,13 @@
       .template-block {
         width: 90%;
       }
+    }
+    .discount-banner {
+      background:#f1f6ff;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid #0a1e3f;
+      margin-bottom: 2rem;
+      border-radius: 6px;
     }
     footer {
       background: #0a1e3f;
@@ -151,22 +158,26 @@
   </section>
 
   <section class="section" id="packages">
+    <div class="discount-banner">
+      <strong>🎯 Early Access Discount – 20% Off</strong><br>
+      We're offering 10 discounted CV packages as part of our early growth round.
+    </div>
     <h3>Our Packages</h3>
     <div class="packages">
       <div class="package">
-        <h4>Essential CV – £35</h4>
+        <h4>Essential CV – <s>£35</s> <strong>£28</strong></h4>
         <p>Professionally written CV only.</p>
-        <a href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02" class="btn">Order Now</a>
+        <a href="https://buy.stripe.com/7sYcN597QfGJal7cSa6kg03" class="btn">Order Now</a>
       </div>
       <div class="package">
-        <h4>Career Builder – £65</h4>
+        <h4>Career Builder – <s>£65</s> <strong>£52</strong></h4>
         <p>CV + tailored Cover Letter.</p>
-        <a href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01" class="btn">Order Now</a>
+        <a href="https://buy.stripe.com/6oU28r3Nw1PTeBnf0i6kg04" class="btn">Order Now</a>
       </div>
       <div class="package">
-        <h4>Complete Profile – £110</h4>
+        <h4>Complete Profile – <s>£110</s> <strong>£88</strong></h4>
         <p>CV + Cover Letter + LinkedIn Makeover.</p>
-        <a href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00" class="btn">Order Now</a>
+        <a href="https://buy.stripe.com/bJecN54RAcuxdxjbO66kg05" class="btn">Order Now</a>
       </div>
     </div>
     <p style="margin-top: 2rem;">
@@ -186,11 +197,11 @@
 
   <div class="templates-section">
     <div class="template-block">
-      <h4 style="margin-top: 0; margin-bottom: 0.5rem;">CV Template</h4>
+      <h4>CV Template</h4>
       <img src="cv-template.jpg" alt="CV Template">
     </div>
     <div class="template-block">
-      <h4 style="margin-top: 0; margin-bottom: 0.5rem;">Cover Letter Template</h4>
+      <h4>Cover Letter Template</h4>
       <img src="cover-letter-template.jpg" alt="Cover Letter Template">
     </div>
   </div>
