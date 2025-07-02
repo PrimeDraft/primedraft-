@@ -2,109 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Submit Your CV Info – PrimeDraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Your CV Process – PrimeDraft</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
       background: #ffffff;
       color: #111;
       line-height: 1.6;
+      margin: 0;
       padding: 2rem;
-    }
-    h2 {
-      color: #0a1e3f;
       text-align: center;
     }
-    .form-container {
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #eef2f8;
-      padding: 2rem;
-      border-radius: 8px;
+    h1 {
+      color: #0a1e3f;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2.slogan {
+      color: #0a1e3f;
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
     }
     label {
-      font-weight: bold;
       display: block;
       margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
     }
-    input, textarea, select {
+    input, textarea {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      border-radius: 5px;
+      padding: 0.75rem;
       border: 1px solid #ccc;
+      border-radius: 4px;
     }
     button {
       margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
-      background-color: #0a1e3f;
-      color: white;
       border: none;
+      background: #0a1e3f;
+      color: white;
+      font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #555;
     }
   </style>
 </head>
 <body>
+  <h1>Start Your CV Process</h1>
+  <h2 class="slogan">The Start of Something Greater</h2>
 
-  <h2>Submit Your CV Information</h2>
+  <form name="cv-form" method="POST" data-netlify="true">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
 
-  <div class="form-container">
-    <form name="cv-details" method="POST" data-netlify="true" enctype="multipart/form-data">
-      <input type="hidden" name="form-name" value="cv-details">
-      
-      <label for="name">Full Name*</label>
-      <input type="text" name="name" required>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="email">Email Address (must match payment)*</label>
-      <input type="email" name="email" required>
+    <label for="details">Tell us about your current CV and goals</label>
+    <textarea id="details" name="details" rows="6" required></textarea>
 
-      <label for="phone">Phone Number (optional)</label>
-      <input type="text" name="phone">
-
-      <label for="service">What service did you purchase?*</label>
-      <select name="service" required>
-        <option value="">Select</option>
-        <option value="Essential CV">Essential CV</option>
-        <option value="Career Builder">Career Builder</option>
-        <option value="Complete Profile">Complete Profile</option>
-      </select>
-
-      <label for="industry">What jobs or industries are you applying for?</label>
-      <input type="text" name="industry">
-
-      <label for="cv">Upload current CV (if you have one)</label>
-      <input type="file" name="cv">
-
-      <label for="roles">Any job roles you're targeting?</label>
-      <textarea name="roles"></textarea>
-
-      <label for="info">Any specific goals or achievements you'd like included?</label>
-      <textarea name="info"></textarea>
-
-      <label for="contact_method">Preferred method of contact</label>
-      <select name="contact_method">
-        <option value="Email">Email</option>
-        <option value="WhatsApp">WhatsApp</option>
-        <option value="Not at all">Not at all</option>
-      </select>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <footer>
-    © 2025 PrimeDraft. All rights reserved.
-  </footer>
-
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
