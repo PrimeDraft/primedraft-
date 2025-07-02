@@ -74,7 +74,7 @@
   <h1>Start Your CV Process</h1>
   <h2>The Start of Something Greater</h2>
 
-  <form name="cv-form" method="POST" data-netlify="true" action="/thank-you.html">
+  <form name="cv-form" method="POST" data-netlify="true" enctype="multipart/form-data" action="/thank-you.html">
     <input type="hidden" name="form-name" value="cv-form" />
 
     <label for="name">Full Name *</label>
@@ -98,6 +98,9 @@
     <label for="notes">Notes: gaps, career changes, or anything else</label>
     <textarea id="notes" name="notes" rows="4"></textarea>
 
+    <label for="cv-upload">Upload Current CV (Optional)</label>
+    <input type="file" id="cv-upload" name="cv-upload" accept=".pdf,.doc,.docx" />
+
     <div class="consent">
       <input type="checkbox" id="consent" name="consent" required>
       <label for="consent">I confirm the information provided is accurate.</label>
@@ -109,3 +112,4 @@
   </form>
 </body>
 </html>
+ml>
