@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Start Your CV Process – PrimeDraft</title>
   <style>
     body {
@@ -12,39 +12,40 @@
       line-height: 1.6;
       margin: 0;
       padding: 2rem;
-      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto;
     }
     h1 {
       color: #0a1e3f;
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      text-align: center;
     }
-    h2.slogan {
+    h2 {
       color: #0a1e3f;
       font-size: 1.2rem;
       font-weight: normal;
       margin-top: 0;
+      text-align: center;
       margin-bottom: 2rem;
     }
     form {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: left;
+      display: flex;
+      flex-direction: column;
     }
     label {
-      display: block;
       margin-top: 1rem;
       margin-bottom: 0.3rem;
       font-weight: 600;
     }
     input, textarea {
-      width: 100%;
       padding: 0.75rem;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 1rem;
     }
     button {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       padding: 0.75rem 1.5rem;
       border: none;
       background: #0a1e3f;
@@ -52,24 +53,86 @@
       font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1rem;
+    }
+    .consent {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .consent input {
+      margin-right: 0.5rem;
+    }
+    p.privacy {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    #thank-you-message {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #0a1e3f;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <h1>Start Your CV Process</h1>
-  <h2 class="slogan">The Start of Something Greater</h2>
+  <h2>The Start of Something Greater</h2>
 
-  <form name="cv-form" method="POST" data-netlify="true">
-    <label for="name">Full Name</label>
+  <form id="cv-form" name="cv-form" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="cv-form" />
+
+    <label for="name">Full Name *</label>
     <input type="text" id="name" name="name" required>
 
-    <label for="email">Email Address</label>
+    <label for="email">Email Address *</label>
     <input type="email" id="email" name="email" required>
 
-    <label for="details">Tell us about your current CV and goals</label>
-    <textarea id="details" name="details" rows="6" required></textarea>
+    <label for="current-job">Current Job Title / Industry *</label>
+    <input type="text" id="current-job" name="current-job" required>
+
+    <label for="desired-job">Desired Job Title / Industry *</label>
+    <input type="text" id="desired-job" name="desired-job" required>
+
+    <label for="experience">Years of Professional Experience *</label>
+    <input type="number" id="experience" name="experience" min="0" required>
+
+    <label for="skills">Key Skills or Achievements *</label>
+    <textarea id="skills" name="skills" rows="4" required></textarea>
+
+    <label for="notes">Notes: gaps, career changes, or anything else</label>
+    <textarea id="notes" name="notes" rows="4"></textarea>
+
+    <div class="consent">
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">I confirm the information provided is accurate.</label>
+    </div>
+
+    <p class="privacy">Your information is 100% confidential and used only to create your CV.</p>
 
     <button type="submit">Submit</button>
   </form>
+
+  <div id="thank-you-message">
+    ✅ Thank you! Your information has been sent. We'll be in touch soon.
+  </div>
+
+  <script>
+    const form = document.getElementById('cv-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(() => {
+        form.style.display = 'none';
+        document.getElementById('thank-you-message').style.display = 'block';
+      }).catch((error) => alert(error));
+    });
+  </script>
 </body>
 </html>
