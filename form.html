@@ -68,20 +68,13 @@
       color: #555;
       margin-top: 0.5rem;
     }
-    #thank-you-message {
-      display: none;
-      margin-top: 2rem;
-      font-size: 1.2rem;
-      color: #0a1e3f;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
   <h1>Start Your CV Process</h1>
   <h2>The Start of Something Greater</h2>
 
-  <form id="cv-form" name="cv-form" method="POST" data-netlify="true">
+  <form name="cv-form" method="POST" data-netlify="true" action="/thank-you.html">
     <input type="hidden" name="form-name" value="cv-form" />
 
     <label for="name">Full Name *</label>
@@ -114,25 +107,5 @@
 
     <button type="submit">Submit</button>
   </form>
-
-  <div id="thank-you-message">
-    ✅ Thank you! Your information has been sent. We'll be in touch soon.
-  </div>
-
-  <script>
-    const form = document.getElementById('cv-form');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      }).then(() => {
-        form.style.display = 'none';
-        document.getElementById('thank-you-message').style.display = 'block';
-      }).catch((error) => alert(error));
-    });
-  </script>
 </body>
 </html>
