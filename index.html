@@ -2,221 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PrimeDraft – Professional CV Writing</title>
+  <meta name="description" content="PrimeDraft crafts ATS‑friendly, interview‑winning CVs, cover letters and LinkedIn profiles for students and graduates in the UK." />
+  <link rel="canonical" href="https://primedraft.example/" />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Theme / SEO basics -->
+  <meta name="theme-color" content="#0a1e3f" />
+  <meta property="og:title" content="PrimeDraft – Professional CV Writing" />
+  <meta property="og:description" content="Your dream job starts with a better CV. Expert CVs, cover letters and LinkedIn makeovers." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6LYH06CXR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);} 
     gtag('js', new Date());
     gtag('config', 'G-Q6LYH06CXR');
   </script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1278295864093409');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1278295864093409&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #ffffff;
-      color: #111;
-      line-height: 1.6;
+    :root {
+      --navy:#0a1e3f; 
+      --navy-600:#132b5a;
+      --bg:#ffffff; 
+      --text:#101114;
+      --muted:#6b7280;
+      --card:#f7f8fb;
+      --gold:#ffcc00;
+      --green:#10b981;
+      --shadow:0 8px 24px rgba(10,30,63,.08);
+      --radius:14px;
     }
-    header {
-      background: #0a1e3f;
-      color: #fff;
-      padding: 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 500;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: #f8f8f8;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #0a1e3f;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #0a1e3f;
-    }
-    .btn {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      background: #0a1e3f;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 0 1rem;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h3 {
-      color: #0a1e3f;
-      margin-bottom: 1rem;
-    }
-    .packages, .testimonials {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .package, .testimonial {
-      padding: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #f9f9f9;
-    }
-    .testimonial {
-      font-style: italic;
-    }
-    .templates-section {
-      padding: 1.5rem 2rem 4rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-    .template-block {
-      flex: 1;
-      min-width: 280px;
-      max-width: 45%;
-      text-align: center;
-    }
-    .template-block h4 {
-      color: #0a1e3f;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-    .template-block img {
-      width: 100%;
-      aspect-ratio: 5 / 7;
-      object-fit: cover;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    @media (max-width: 768px) {
-      .templates-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .template-block {
-        width: 90%;
-      }
-    }
-    footer {
-      background: #0a1e3f;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+
+    /* Sale banner */
+    .topbar{background:var(--gold);color:#111;font-weight:800;text-align:center;padding:.6rem 1rem}
+    .topbar span{display:inline-block}
+
+    header{position:sticky;top:0;z-index:40;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+    .nav{max-width:1100px;margin:auto;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .brand img{height:40px;border-radius:8px}
+    .brand h1{font-size:1.35rem;margin:0;font-weight:800;letter-spacing:.2px}
+    nav a{color:#fff;text-decoration:none;margin-left:1.25rem;font-weight:600;opacity:.95}
+    nav a:hover{opacity:1;text-decoration:underline}
+
+    .hero{padding:5rem 1.25rem 3.5rem;background:linear-gradient(180deg,#f7f8fb, #fff);text-align:center}
+    .hero h2{margin:0 auto .5rem;max-width:900px;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);font-weight:900}
+    .hero p{margin:.25rem auto 1.25rem;max-width:700px;font-size:clamp(1.05rem,2.5vw,1.25rem);color:var(--navy-600);font-weight:700}
+    .cta-row{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;background:var(--navy);color:#fff;padding:.85rem 1.25rem;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:var(--shadow)}
+    .btn.alt{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+    .btn.gold{background:var(--gold);color:#111}
+
+    .container{max-width:1100px;margin:0 auto;padding:2rem 1.25rem}
+    .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem}
+    .trust .tile{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:1rem;display:flex;gap:.75rem;align-items:center}
+    .trust svg{flex:0 0 28px}
+
+    h3.section-title{color:var(--navy);font-size:1.6rem;margin:0 0 1rem}
+
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .step{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow)}
+
+    .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);position:relative}
+    .badge{position:absolute;top:12px;right:12px;background:var(--gold);color:#111;font-weight:900;padding:.25rem .5rem;border-radius:999px;font-size:.8rem}
+    .price{font-size:1.7rem;font-weight:900;color:var(--navy);margin:.25rem 0}
+    .was{color:var(--muted);text-decoration:line-through;margin-left:.25rem;font-weight:600}
+    .included{margin:.5rem 0 1rem;padding-left:1.1rem}
+    .included li{margin:.25rem 0}
+
+    .testimonials{display:grid;grid-template-columns:1fr;gap:1rem}
+    .quote{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:1rem;font-style:italic}
+
+    .templates{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
+    .tpl{flex:1;min-width:280px;max-width:48%;text-align:center}
+    .tpl img{width:100%;aspect-ratio:5/7;object-fit:cover;border-radius:var(--radius);border:1px solid #e5e7eb;transition:transform .25s ease}
+    .tpl img:hover{transform:translateY(-4px)}
+
+    details{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+    details+details{margin-top:.75rem}
+    summary{cursor:pointer;font-weight:800;color:var(--navy)}
+
+    footer{background:var(--navy);color:#fff;padding:2rem 1.25rem;margin-top:2rem}
+    footer a{color:#fff;text-decoration:underline}
+
+    /* Small helpers */
+    .center{text-align:center}
+    .mt{margin-top:1rem}
+    .mb{margin-bottom:1rem}
   </style>
 </head>
 <body>
+  <!-- Sale banner (no end date shown) -->
+  <div class="topbar" role="status" aria-live="polite">
+    🎉 <span>Limited-Time Offer:</span> <span>20% OFF all packages for new clients.</span>
+  </div>
+
   <header>
-    <div style="display: flex; align-items: center;">
-      <img src="logo.PNG" alt="PrimeDraft Logo" style="height: 40px; margin-right: 0.75rem;">
-      <h1 style="margin: 0; font-size: 1.5rem;">PrimeDraft</h1>
+    <div class="nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <img src="logo.PNG" alt="PrimeDraft logo" />
+        <h1>PrimeDraft</h1>
+      </div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#packages">Packages</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#packages">Packages</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
   <section class="hero">
-    <h2>Crafted to Impress. Designed to Get Interviews.</h2>
-    <p>The Start of Something Greater</p>
-    <div class="btns">
-      <a href="#packages" class="btn">See Packages</a>
+    <h2>Your dream job starts with a better CV.</h2>
+    <p>ATS‑friendly, recruiter‑approved CVs, cover letters and LinkedIn makeovers—delivered fast.</p>
+    <div class="cta-row">
+      <a class="btn gold" href="#packages">See Packages</a>
+      <a class="btn alt" href="#contact">Ask a question</a>
+    </div>
+
+    <div class="container">
+      <div class="trust" aria-label="Trust features">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 9.5-7 10-3.5-.5-7-5-7-10V6l7-4z"></path></svg>
+          <div><strong>UK market expertise</strong><br><span class="muted">Tailored for UK recruiters & ATS</span></div>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M3 12l2-2 4 4L19 4l2 2-12 12z"></path></svg>
+          <div><strong>2 free revisions</strong><br><span>We refine until it’s right</span></div>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm0-6a10 10 0 110 20A10 10 0 0112 2z"></path></svg>
+          <div><strong>48–72h turnaround</strong><br><span>Fast delivery available</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <h3>About PrimeDraft</h3>
-    <p>At PrimeDraft, we connect you with skilled freelance CV writers who know how to craft documents that get noticed. Our service is designed to make the CV writing process simple and effective, helping you present your experience clearly and professionally.</p>
-    <ul>
-      <li>Vetted freelancers experienced in writing CVs tailored for the UK job market.</li>
-      <li>Focused on quality, clarity, and ATS optimization.</li>
-      <li>Simple and convenient: choose your package, pay, and get your tailored CV delivered in 2–3 days.</li>
-    </ul>
+  <section id="how" class="container">
+    <h3 class="section-title">How it works</h3>
+    <div class="steps">
+      <div class="step"><strong>1) Pick a package</strong><br/>Choose Essential, Career Builder, or Complete Profile.</div>
+      <div class="step"><strong>2) Secure checkout</strong><br/>Pay via Stripe, then complete a short form with your details.</div>
+      <div class="step"><strong>3) Draft & revisions</strong><br/>Receive your draft in 2–3 days, then request up to 2 revisions.</div>
+    </div>
   </section>
 
-  <section class="section" id="packages">
-    <h3>Our Packages</h3>
+  <section id="packages" class="container">
+    <h3 class="section-title">Packages</h3>
     <div class="packages">
-      <div class="package">
-        <h4>Essential CV – £35</h4>
-        <p>Professionally written CV only.</p>
-        <a href="https://buy.stripe.com/4gM3cvgAi5259h39FY6kg02" class="btn">Order Now</a>
-      </div>
-      <div class="package">
-        <h4>Career Builder – £65</h4>
-        <p>CV + tailored Cover Letter.</p>
-        <a href="https://buy.stripe.com/9B6dR9ck2gKNfFr9FY6kg01" class="btn">Order Now</a>
-      </div>
-      <div class="package">
-        <h4>Complete Profile – £110</h4>
-        <p>CV + Cover Letter + LinkedIn Makeover.</p>
-        <a href="https://buy.stripe.com/6oUcN583MdyBfFr4lE6kg00" class="btn">Order Now</a>
-      </div>
+
+      <article class="card" aria-label="Essential CV package">
+        <div class="badge">20% OFF</div>
+        <h4>Essential CV</h4>
+        <div class="price">£28 <span class="was">was £35</span></div>
+        <ul class="included">
+          <li>Professionally written CV</li>
+          <li>ATS‑friendly formatting</li>
+          <li>Delivery in 2–3 days</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/7sYcN597QfGJal7cSa6kg03" onclick="trackPkg('Essential CV',28)" aria-label="Order Essential CV for £28">Order now</a>
+      </article>
+
+      <article class="card" aria-label="Career Builder package" style="border:2px solid var(--gold)">
+        <div class="badge">Best Value</div>
+        <h4>Career Builder</h4>
+        <div class="price">£52 <span class="was">was £65</span></div>
+        <ul class="included">
+          <li>CV + Tailored Cover Letter</li>
+          <li>Keywords aligned to your target roles</li>
+          <li>2 free revisions</li>
+        </ul>
+        <a class="btn gold" href="https://buy.stripe.com/6oU28r3Nw1PTeBnf0i6kg04" onclick="trackPkg('Career Builder',52)" aria-label="Order Career Builder for £52">Order now</a>
+      </article>
+
+      <article class="card" aria-label="Complete Profile package">
+        <div class="badge">20% OFF</div>
+        <h4>Complete Profile</h4>
+        <div class="price">£88 <span class="was">was £110</span></div>
+        <ul class="included">
+          <li>CV + Cover Letter + LinkedIn Makeover</li>
+          <li>Profile optimisation for recruiter search</li>
+          <li>Priority turnaround</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/bJecN54RAcuxdxjbO66kg05" onclick="trackPkg('Complete Profile',88)" aria-label="Order Complete Profile for £88">Order now</a>
+      </article>
+
     </div>
-    <p style="margin-top: 2rem;">
-      After completing your payment, you’ll be automatically redirected to a short form. Please complete it to help us begin processing your order.<br><br>
-      <strong>Important:</strong> Please use the same email address for both your payment and this form to ensure we can match your order quickly and accurately.
-    </p>
+
+    <p class="center mt">After payment you’ll be redirected to a short form. <strong>Please use the same email</strong> for payment and form so we can match your order quickly.</p>
   </section>
 
-  <section class="section">
-    <h3>What Our Clients Say</h3>
+  <section class="container" aria-labelledby="testimonials-heading">
+    <h3 id="testimonials-heading" class="section-title">What our clients say</h3>
     <div class="testimonials">
-      <div class="testimonial">“PrimeDraft’s CV service made applying for jobs so much easier. I started getting interview calls within a week.” – Alex, Marketing Assistant</div>
-      <div class="testimonial">“Quick turnaround and professional writing. My CV now stands out and gets noticed by recruiters.” – Sarah, Graduate</div>
-      <div class="testimonial">“Excellent service with clear communication. The cover letter really helped me land my first job.” – James, Junior Analyst</div>
+      <blockquote class="quote">“PrimeDraft made the process easy. I started getting interview calls within a week.” – Alex, Marketing Assistant</blockquote>
+      <blockquote class="quote">“Quick turnaround and professional writing. My CV now stands out with recruiters.” – Sarah, Graduate</blockquote>
+      <blockquote class="quote">“Great communication and the cover letter helped me land my first role.” – James, Junior Analyst</blockquote>
     </div>
   </section>
 
-  <div class="templates-section">
-    <div class="template-block">
-      <h4>CV Template</h4>
-      <img src="cv-template.jpg" alt="CV Template">
+  <section class="container">
+    <h3 class="section-title">Templates</h3>
+    <div class="templates">
+      <div class="tpl">
+        <h4>CV Template</h4>
+        <img src="cv-template.jpg" alt="Example CV template preview"/>
+      </div>
+      <div class="tpl">
+        <h4>Cover Letter Template</h4>
+        <img src="cover-letter-template.jpg" alt="Example cover letter template preview"/>
+      </div>
     </div>
-    <div class="template-block">
-      <h4>Cover Letter Template</h4>
-      <img src="cover-letter-template.jpg" alt="Cover Letter Template">
-    </div>
-  </div>
+  </section>
 
-  <section class="section">
-    <h3>Refund Policy</h3>
-    <p>At PrimeDraft, your satisfaction is important to us. If your order is not delivered within the agreed timeframe or the final documents significantly differ from the agreed scope, you may request a refund. We provide up to two complimentary revisions to ensure your documents meet your expectations. Refund requests must be made within 7 days of delivery. Refunds are not available for changes requested after final approval or due to personal style preferences.</p>
+  <section id="faq" class="container">
+    <h3 class="section-title">FAQ</h3>
+    <details>
+      <summary>How fast is delivery?</summary>
+      <p>Most orders are delivered in 48–72 hours. Priority turnaround is available on request.</p>
+    </details>
+    <details>
+      <summary>Do you offer revisions?</summary>
+      <p>Yes — every package includes up to <strong>two free revisions</strong> within 7 days of delivery.</p>
+    </details>
+    <details>
+      <summary>What’s your refund policy?</summary>
+      <p>If we miss the agreed timeframe or the final documents significantly differ from the agreed scope, you can request a refund within 7 days of delivery.</p>
+    </details>
+    <details>
+      <summary>What happens after I pay?</summary>
+      <p>You’ll be redirected to a short form. Share your current CV (if you have one) and the roles you’re targeting — we take it from there.</p>
+    </details>
   </section>
 
   <footer id="contact">
-    <p>Got a question? Reach us at <a href="mailto:primedraft.contact@gmail.com" style="color:white; text-decoration:underline;">primedraft.contact@gmail.com</a></p>
-    <p>Business Hours: Mon–Sat, 9am–6pm (UK Time) | Response time: Within 24 hours</p>
-    <p style="margin-top: 2rem; font-size: 0.85rem;">&copy; 2025 PrimeDraft. All rights reserved.</p>
+    <div class="container center">
+      <p>Questions? Email <a href="mailto:primedraft.contact@gmail.com">primedraft.contact@gmail.com</a></p>
+      <p>Business Hours: Mon–Sat, 9am–6pm (UK time) • Typical response within 24 hours</p>
+      <p style="opacity:.8;margin-top:1rem">© 2025 PrimeDraft. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Basic tracking for button clicks → sends to Meta + GA
+    function trackPkg(name, price){
+      try { if (window.fbq) fbq('track', 'Lead', {content_name:name, value:price, currency:'GBP'}); } catch(e){}
+      try { if (window.gtag) gtag('event','begin_checkout',{currency:'GBP', value:price, items:[{item_name:name, price:price}]}); } catch(e){}
+    }
+  </script>
+
+  <!-- Structured data for richer search results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PrimeDraft",
+    "url": "https://primedraft.example/",
+    "logo": "https://primedraft.example/logo.png",
+    "sameAs": ["https://www.instagram.com/primedraft"]
+  }
+  </script>
 </body>
 </html>
 
