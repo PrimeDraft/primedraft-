@@ -87,13 +87,16 @@
     .included{margin:.5rem 0 1rem;padding-left:1.1rem}
     .included li{margin:.25rem 0}
 
-    .testimonials{display:grid;grid-template-columns:1fr;gap:1rem}
-    .quote{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:1rem;font-style:italic}
-
-    .templates{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
-    .tpl{flex:1;min-width:280px;max-width:48%;text-align:center}
+    /* TEMPLATES: fixed centering on mobile */
+    .templates{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;align-items:flex-start}
+    .tpl{flex:1 1 320px;min-width:280px;max-width:420px;text-align:center;margin:0 auto}
+    .tpl h4{color:var(--navy);margin:.25rem 0 .5rem;font-size:1.1rem}
     .tpl img{width:100%;aspect-ratio:5/7;object-fit:cover;border-radius:var(--radius);border:1px solid #e5e7eb;transition:transform .25s ease}
     .tpl img:hover{transform:translateY(-4px)}
+    @media (max-width:768px){
+      .templates{justify-content:center}
+      .tpl{flex:0 1 92%;max-width:520px}
+    }
 
     details{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
     details+details{margin-top:.75rem}
