@@ -19,16 +19,19 @@
     header{background:var(--navy);color:#fff;padding:1.5rem;text-align:center;box-shadow:var(--shadow)}
     header h1{margin:0;font-size:1.8rem;font-weight:800}
     header h2{margin:.25rem 0 0;font-size:1.05rem;font-weight:500;opacity:.9}
-    main{max-width:720px;margin:2rem auto;padding:2rem;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
-    form{display:grid;gap:1.1rem}
+    main{max-width:720px;margin:2rem auto;padding:2.5rem;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+    form{display:grid;gap:1.25rem}
     label{font-weight:600;margin-bottom:.25rem;display:block}
-    input,textarea,select{width:100%;padding:.75rem;border:1px solid #d1d5db;border-radius:var(--radius);font-size:1rem}
+    input,textarea,select{width:100%;padding:.75rem;border:1px solid #d1d5db;border-radius:var(--radius);font-size:1rem;background:#fff}
     input:focus,textarea:focus,select:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(10,30,63,.15)}
-    button{margin-top:1rem;padding:.9rem 1.25rem;border:none;border-radius:var(--radius);font-size:1.05rem;font-weight:700;cursor:pointer;background:var(--navy);color:#fff;box-shadow:var(--shadow);transition:background .2s ease}
-    button:hover{background:#132b5a}
-    .consent{display:flex;align-items:center;gap:.5rem;font-size:.9rem}
-    .privacy{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+    .consent{text-align:center;margin-top:1rem}
+    .consent label{display:block;font-weight:500;margin-bottom:.5rem}
+    .consent input{display:block;margin:0 auto}
+    .privacy{font-size:.85rem;color:var(--muted);text-align:center}
     .note{font-size:.9rem;color:var(--muted)}
+    .actions{display:flex;justify-content:center;margin-top:1rem}
+    button{padding:1rem 2rem;border:none;border-radius:var(--radius);font-size:1.05rem;font-weight:700;cursor:pointer;background:var(--navy);color:#fff;box-shadow:var(--shadow);transition:background .2s ease}
+    button:hover{background:#132b5a}
   </style>
 </head>
 <body>
@@ -74,17 +77,18 @@
       <p class="note">Supported formats: PDF, DOC, DOCX</p>
 
       <div class="consent">
-        <input type="checkbox" id="consent" name="consent" required>
         <label for="consent">I confirm the information provided is accurate.</label>
+        <input type="checkbox" id="consent" name="consent" required>
       </div>
-      <p class="privacy">Your information is confidential and only used to craft your CV. Files are securely processed via Netlify.</p>
+      <p class="privacy">Your information is confidential and only used to craft your CV.</p>
 
-      <button type="submit">Submit & Begin</button>
+      <div class="actions">
+        <button type="submit">Submit & Begin</button>
+      </div>
     </form>
   </main>
 
   <script>
-    // Fire tracking on form submission
     document.querySelector('form').addEventListener('submit',function(){
       try{if(window.fbq) fbq('track','Lead',{content_name:'CV Form Submit'});}catch(e){}
       try{if(window.gtag) gtag('event','form_submit',{event_category:'Forms',event_label:'CV Form'});}catch(e){}
@@ -92,3 +96,4 @@
   </script>
 </body>
 </html>
+
